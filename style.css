@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend Deca', sans-serif;
+    cursor: url("./assets/icons8-cursor-20.png"), auto;
+    overflow-x: none;
+}
+
+body{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+/* REVEAL ON SCROLL EFFECT */
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+
+/* LATERAL BAR */
+
+.lateral-bar{
+    width: 10vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #17171e;
+}
+
+.lateral-bar .section-links {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section-links a {
+    height: 20px;
+    width: 20px;
+    border: 3px solid #fff301;
+    border-radius: 20px;
+    position: relative;
+}
+
+.section-links a:hover{
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+
+.section-links .home::after{
+    content: "home";
+    position: absolute;
+    left: 40px;
+    top: 0;
+    color: white;
+    border-radius: 10px;
+    display: none;
+    transition: all 500ms;
+}
+
+.section-links .skills::after{
+    content: "skills";
+    position: absolute;
+    left: 40px;
+    top: 0;
+    color: white;
+    border-radius: 10px;
+    display: none;
+    transition: all 500ms;
+}
+
+.section-links .projects::after{
+    content: "projects";
+    position: absolute;
+    left: 40px;
+    top: 0;
+    color: white;
+    border-radius: 10px;
+    display: none;
+    transition: all 500ms;
+}
+
+.section-links .contacts::after{
+    content: "contacts";
+    position: absolute;
+    left: 40px;
+    top: 0;
+    color: white;
+    border-radius: 10px;
+    display: none;
+    transition: all 500ms;
+}
+.section-links a:hover::after{
+    display: block
+}
+
+.section-links a:active{
+    background-color: #fff301;
+}
+
+/* CONTAINER */ 
+
+.container{
+    background-color: #17171e;
+    min-height: 100vh;
+    width: 90vw;
+    margin-left: 10vw;
+}
+
+/* SOCIAL CONTAINER */ 
+
+.social-container{
+    position: fixed;
+    right: 0;
+    bottom: 10px;
+    height: 200px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-container .fa-brands {
+    color: gray;
+    font-size: 2em;
+}
+
+.social-container .fa-brands:hover{
+    color: white;
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+
+/* HOME SECTION */
+
+.container section {
+    height: 100%;
+    width: 100%;
+    background-color: #17171e;
+}
+
+.container .home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-section h1{
+    color: #fff301;
+    font-size: 4em;
+}
+
+.home-section span {
+    color: white;
+    font-size: 2em;
+}
+
+/* SKILLS SECTION */
+
+.skills-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.skills-section h1{
+    color: white;
+    letter-spacing: 5px;
+    margin-left: 50px;
+}
+
+.skills-section span {
+    color:#fff301
+}
+
+.skills-section .skill-list{
+    width: 90%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+
+}
+
+.skill-list i {
+    font-size: 8em;
+    color: gray;
+    position: relative;
+    transition: color 500ms ease-in; 
+    /* Transition: transition-property - transition-duration - transition-timing-function - transition-delay */
+}
+
+.skill-list .fa-html5:after{
+    content: "HTML5";
+    position: absolute;
+    left: 17px;
+    bottom: -35px;
+    font-size: 20px;
+    display: none;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.skill-list .fa-css3-alt:after{
+    content: "CSS3";
+    position: absolute;
+    left: 25px;
+    bottom: -35px;
+    font-size: 20px;
+    display: none;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.skill-list .fa-square-js:after{
+    content: "JavaScript";
+    position: absolute;
+    left: 5px;
+    bottom: -35px;
+    font-size: 20px;
+    display: none;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.skill-list .fa-node-js:after{
+    content: "NodeJS";
+    position: absolute;
+    left: 20px;
+    bottom: -35px;
+    font-size: 20px;
+    display: none;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.skill-list .fa-figma:after{
+    content: "Figma";
+    position: absolute;
+    left: 15px;
+    bottom: -35px;
+    font-size: 20px;
+    display: none;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.skill-list i:hover{
+    color: white;
+    transform: scale(1.1);
+    display: block;
+    
+}
+
+.skill-list i:hover:after{
+    display: block;
+}

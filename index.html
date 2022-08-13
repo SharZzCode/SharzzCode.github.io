@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/e8242ac897.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div class="lateral-bar">
+        <div class="section-links">
+                <a class="home" href="#home"></a>
+                <a class="skills" href="#skills"></a>
+                <a class="projects" href="#projects"></a>
+                <a class="contacts" href="#contacts"></a>
+            </ul>
+        </div>
+    </div>
+    <div class="container reveal">
+        <section class="home-section" id="home">
+            <div class="presentation">
+                <h1>Hi, I'm Rick</h1>
+                <span>I am a <span class="auto-typing"></span></span>
+            </div>
+            
+        </section>
+        <section class="skills-section" id="skills">
+            <h1 class="reveal">These are my coding <span>skills</span>...</h1>
+            <div class="skill-list reveal">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <i class="fa-brands fa-square-js"></i>
+                <i class="fa-brands fa-node-js"></i>
+                <i class="fa-brands fa-figma"></i>
+            </div>
+        </section>
+    </div>
+    <div class="social-container">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-github"></i>
+    </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var options = {
+            strings: ['Web Developer...', 'Student...', "UI designer..."],
+            typeSpeed: 40,
+            backSpeed: 100,
+            loop: true
+        };
+
+        var typed = new Typed('.auto-typing', options);
+
+        window.addEventListener("scroll", reveal);
+
+        function reveal(){
+            let revealElements = document.querySelectorAll(".reveal");
+
+            for (let i = 0; i < revealElements.length; i++) {
+                let windowHeight = window.innerHeight;
+                let revealtop = revealElements[i].getBoundingClientRect().top;
+                let revealpoint = 150;
+
+                if (revealtop < windowHeight - revealpoint) {
+                    revealElements[i].classList.add("active")
+                } else {
+                    revealElements[i].classList.remove("active")
+                }
+            }
+        }
+    </script>
+</body>
+</html>
