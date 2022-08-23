@@ -12,15 +12,42 @@ switchModeBtn.addEventListener("click", () => {
 
 /* DISPLAY PROJECT TITLE */
 
-let mediaElement = document.querySelector(".media-element");
-let projectTitle = document.querySelector(".project-title");
+let mediaElement = document.querySelectorAll(".media-element");
+let projectTitle = document.querySelectorAll(".project-title");
 
-mediaElement.addEventListener("mouseover", (event) => {  
-    projectTitle.style.display = "block";
+mediaElement.forEach ( media => {
+    media.addEventListener("mouseover", (event) => {  
+        let text = media.querySelector("p");
+        text.style.display = "block";
+        })
 })
 
-mediaElement.addEventListener("mouseout", () => {
-    projectTitle.style.display = "none";
+mediaElement.forEach ( media => {
+    media.addEventListener("mouseout", () => {
+        let text = media.querySelector("p");
+        text.style.display = "none";
+    })
 })
 
 
+/* LOADER */ 
+
+let preloaderWrapper = document.querySelector(".preloader-wrapper");
+
+window.addEventListener("load", () => {
+    preloaderWrapper.style.display = "none"
+})
+
+
+/* ACTIVE STATUS ON BUTTONS */
+
+let buttons = document.querySelectorAll(".btn");
+
+
+buttons.forEach ( btn => {
+    btn.addEventListener("click", () => {
+        let activeBtn = document.querySelector(".active");
+        btn.classList.add("active");
+        activeBtn.classList.remove("active")
+    })
+})
